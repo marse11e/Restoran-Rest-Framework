@@ -1,5 +1,5 @@
 from django.db import models
-
+from .utils import validate_phone_number as v_phone
 
 class Starters(models.Model):
     image = models.ImageField(upload_to="starters/", verbose_name="Изображение")
@@ -147,7 +147,8 @@ class Chefs(models.Model):
 class Book_A_Table(models.Model):
     full_name = models.CharField(verbose_name="ФИО", max_length=120)
     email = models.EmailField(verbose_name="Email", max_length=120)
-    phone = models.CharField(verbose_name="Мобильный телефон", max_length=12)
+    phone = models.CharField(verbose_name="Мобильный телефон", 
+        max_length=12, validators=[v_phone])
     date = models.DateField(verbose_name="Дата")
     time = models.TimeField(verbose_name="Время")
     people = models.PositiveIntegerField(verbose_name="Количество людей")
