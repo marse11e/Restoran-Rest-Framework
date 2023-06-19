@@ -6,7 +6,8 @@ from .models import Book_A_Table, Contact
 class Book_A_TableForm(ModelForm):
     class Meta:
         model = Book_A_Table
-        fields = ['full_name', 'email', 'phone', 'date', 'time', 'people', 'message']
+        fields = ['full_name', 'email', 'phone', 'date',
+                   'time', 'people', 'message']
         widgets = {
             "full_name": TextInput(attrs={
                 "type": "text",
@@ -26,7 +27,7 @@ class Book_A_TableForm(ModelForm):
                 "data-rule": "email",
                 "data-msg": "Please enter a valid email"
             }),
-            "phone": TimeInput(attrs={
+            "phone": TextInput(attrs={
                 "type": "text",
                 "class": "form-control",
                 "name": "phone",

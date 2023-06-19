@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 
 class Starters(models.Model):
     image = models.ImageField(upload_to="starters/", verbose_name="Изображение")
@@ -121,15 +119,20 @@ class Role(models.Model):
 
 
 class Chefs(models.Model):
-    image = models.ImageField(upload_to="testimonials/", 
+    image = models.ImageField(upload_to="shefs/",
         verbose_name="Изображение", blank=True, null=True)
     full_name = models.CharField(verbose_name="ФИО", max_length=120)
-    role = models.ForeignKey(Role, on_delete=models.PROTECT, verbose_name="Роль павара")
+    role = models.ForeignKey(Role, on_delete=models.PROTECT, 
+        verbose_name="Роль павара")
     opinion = models.TextField(verbose_name="Содержание отзыва", max_length=400)
-    twitter  = models.URLField(blank=True, null=True, unique=True, verbose_name="twitter", max_length=300)
-    facebook = models.URLField(blank=True, null=True, unique=True, verbose_name="facebook", max_length=300)
-    instagram = models.URLField(blank=True, null=True, unique=True, verbose_name="instagram", max_length=300)
-    linkedin = models.URLField(blank=True, null=True, unique=True, verbose_name="linkedin", max_length=300)
+    twitter  = models.URLField(blank=True, null=True, unique=True, 
+        verbose_name="twitter", max_length=300)
+    facebook = models.URLField(blank=True, null=True, unique=True, 
+        verbose_name="facebook", max_length=300)
+    instagram = models.URLField(blank=True, null=True, unique=True,
+        verbose_name="instagram", max_length=300)
+    linkedin = models.URLField(blank=True, null=True, unique=True, 
+        verbose_name="linkedin", max_length=300)
     created_at = models.DateTimeField(auto_now_add=True, 
         verbose_name="Дата создания")
 

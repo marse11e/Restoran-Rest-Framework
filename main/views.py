@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Starters, Breakfast, Lunch, Dinner, Testimonials, Events, Chefs, Gallery
+from .models import Starters, Breakfast, Lunch, \
+    Dinner, Testimonials, Events, Chefs, Gallery
 from .forms import Book_A_TableForm, ContactForm
 
 

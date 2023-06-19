@@ -1,3 +1,8 @@
-from django.test import TestCase
+b = ','.join(input()).split(",")
+s = 0
 
-# Create your tests here.
+for i in b:
+    s += int(i)
+
+
+print(" + ".join(b),'=',s)
